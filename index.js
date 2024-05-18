@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 const cors = require('cors');
 
 app.use(cors());
@@ -89,4 +89,6 @@ app.delete("/habits/:habitId", async (req, res) => {
     } catch (error) {
         res.status(500).json({error: "Unable to delete the habit"})
     }
-})
+});
+
+module.exports = app;
