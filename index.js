@@ -6,11 +6,14 @@ const app = express();
 const port = process.env.PORT || 3000;
 const cors = require('cors');
 
+//
 app.use(cors());
-
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+require('dotenv').config();
 
+
+//
 mongoose.connect("mongodb+srv://sages:sages@sages.p1zye6m.mongodb.net/habit-app").then(() => {
     console.log("Connected to MongoDB!");
 }).catch((error) => {
@@ -91,4 +94,4 @@ app.delete("/habits/:habitId", async (req, res) => {
     }
 });
 
-module.exports = app;
+// module.exports = app;
