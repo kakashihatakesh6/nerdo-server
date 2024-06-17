@@ -20,6 +20,11 @@ mongoose.connect("mongodb+srv://sages:sages@sages.p1zye6m.mongodb.net/habit-app"
     console.log("Error Connecting to MOnoOG", error);
 });
 
+
+app.get('/', () => {
+    res.json({"message": "Server is running fine!"})
+});
+
 app.listen(port, () => {
     console.log("Server running on port 3000");
 });
