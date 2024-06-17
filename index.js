@@ -21,7 +21,7 @@ mongoose.connect("mongodb+srv://sages:sages@sages.p1zye6m.mongodb.net/habit-app"
 });
 
 
-app.get('/', () => {
+app.get('/', (req, res) => {
     res.json({"message": "Server is running fine!"})
 });
 
